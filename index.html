@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bear Functional | Групови тренировки в Банско</title>
+    <meta name="description"
+        content="Bear Functional - тренировки за сила, мобилност и функционалност в Банско. Градски примални движения, калистеника и кондиция.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bear-functional.com/">
+    <meta property="og:title" content="Bear Functional | Тренировки за сила и мобилност в Банско">
+    <meta property="og:description"
+        content="Овладей тялото си. Функционални тренировки, калистеника и примални движения в Банско. Запиши се за следващата сесия!">
+    <meta property="og:image" content="https://bear-functional.com/og-image.jpg">
+
+    <link rel="alternate" hreflang="bg" href="http://www.bearfunctional.com/">
+    <link rel="alternate" hreflang="en" href="http://www.bearfunctional.com/en/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="canonical" href="https://bear-functional.com/">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ExerciseGym",
+      "name": "Bear Functional Training",
+      "image": "https://bear-functional.com/logo.png",
+      "@id": "https://bear-functional.com",
+      "url": "https://bear-functional.com",
+      "telephone": "+359889420180",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ул. Цар Самуил 29",
+        "addressLocality": "Банско",
+        "postalCode": "2770",
+        "addressCountry": "BG"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 41.84018116591287,
+        "longitude": 23.49390540823219
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Wednesday", "Friday"],
+          "opens": "13:00",
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "10:00",
+          "closes": "12:00"
+        }
+      ],
+      "sameAs": [
+        "https://maps.app.goo.gl/uVhhV4dG5V2uVFkC7"
+      ],
+      "description": "Bear Functional Training в Банско предлага функционални тренировки, калистеника и мобилност. Strength Foundations, RAVE Core Party и HIIT тренировки за всяко ниво."
+    }
+    </script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo-wrapper">
+                <img src="logo.png" alt="Bear Functional - логото на залата за фитнес и калистеника в Банско"
+                    class="nav-logo">
+            </div>
+            <div class="nav-links">
+                <a href="#schedule" data-i18n="nav-schedule">Тренировки</a>
+                <a href="#about" data-i18n="nav-about">За мен</a>
+                <a href="#booking-section" data-i18n="nav-contact">Контакт</a>
+                <button id="lang-switch" class="btn-secondary">EN</button>
+            </div>
+            <div class="burger-menu" id="burger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <picture class="hero-img">
+            <source srcset="hero-tall.png" media="(max-width: 991px)">
+            <img src="hero-wide.png"
+                alt="Bear Functional - модерна фитнес зала в Банско за групови тренировки и калистеника">
+        </picture>
+        <div class="hero-content container">
+            <h1 data-i18n="hero-title">Bear Functional | Сила и кондиция в Банско</h1>
+            <p class="subtitle" data-i18n="hero-subtitle">Овладей тялото си. Изгради истинска сила. В сърцето на
+                планината.</p>
+            <a href="#booking-section" class="btn-primary" data-i18n="hero-cta">Запиши се сега</a>
+        </div>
+    </header>
+
+    <section id="schedule" class="schedule-section">
+        <div class="container">
+            <div class="overlap-card">
+                <div class="schedule-grid" id="cards-container">
+                    <!-- Cards will be injected by JS -->
+                </div>
+
+                <div class="bonus-schedule-title">
+                    <h3 data-i18n="bonus-schedule-title">Седмичен Преглед</h3>
+                </div>
+                <div class="schedule-table-wrapper" id="table-container">
+                    <!-- Table will be injected by JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking-section" class="booking-section">
+        <div class="container">
+            <div class="booking-form-wrapper">
+                <h2 data-i18n="booking-title">Запази своето място</h2>
+                <form id="booking-form">
+                    <div class="form-group">
+                        <label for="name" data-i18n="label-name">Име</label>
+                        <input type="text" id="name" name="name" required placeholder="Вашето име">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" data-i18n="label-phone">Телефон</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="08XX XXX XXX">
+                    </div>
+                    <div class="form-group">
+                        <label for="workout-select" data-i18n="label-workout">Избери тренировка и дата</label>
+                        <select id="workout-select" name="workout-date" required>
+                            <option value="" data-i18n="option-select">Избери от списъка...</option>
+                            <!-- Options will be injected by JS based on 30-day window -->
+                        </select>
+                        <p id="availability-msg"
+                            style="font-size: 0.85rem; margin-top: 0.5rem; font-weight: 700; color: var(--primary-color);">
+                        </p>
+                    </div>
+                    <button type="submit" class="btn-primary full-width" data-i18n="btn-submit">Запази място</button>
+                </form>
+
+                <div id="booking-success" class="hidden">
+                    <div class="success-content">
+                        <img src="logo.png" alt="Bear Functional - залата за твоята трансформация в Банско"
+                            class="success-logo">
+                        <h3 data-i18n="success-title">Мястото ти е запазено!</h3>
+                        <p data-i18n="success-msg">Очакваме те в залата. Не забравяй чисти обувки и добро настроение!
+                        </p>
+                        <div class="success-actions">
+                            <button id="add-to-calendar" class="btn-secondary" data-i18n="btn-calendar">📅 Добави в
+                                календар</button>
+                            <a href="https://maps.app.goo.gl/sGP98uDBwtte6upd9" target="_blank"
+                                rel="noopener noreferrer" class="btn-secondary" data-i18n="btn-maps">📍 Виж в Google
+                                Maps</a>
+                        </div>
+                        <div class="entrance-preview">
+                            <p data-i18n="entrance-label">Търси този вход:</p>
+                            <div class="video-responsive-wrapper">
+                                <div id="fb-reel-container" class="fb-reel-placeholder"></div>
+                            </div>
+                            <div id="fb-reel-hint" class="reel-hint hidden">
+                                <a href="https://youtube.com/shorts/G9M_jjkgw6c" target="_blank"
+                                    style="color: inherit;">Не се зарежда? Гледай в YouTube 🎥</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="benefits" class="benefits-section">
+        <div class="container">
+            <div class="benefits-content-wrapper">
+                <h2 class="section-title" data-i18n="benefits-title">Защо Bear Functional?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <h3 data-i18n="benefit-1">Повишена костна плътност¹</h3>
+                        <p data-i18n="benefit-1-desc">Тренировките със съпротивление заздравяват скелетната система.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3 data-i18n="benefit-2">Подобрен метаболизъм²</h3>
+                        <p data-i18n="benefit-2-desc">Повече мускулна маса означава по-висок енергиен разход в покой.
+                        </p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3 data-i18n="benefit-3">Когнитивна функция³</h3>
+                        <p data-i18n="benefit-3-desc">Физическата активност подобрява фокуса и паметта.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3 data-i18n="benefit-4">Качествен сън⁴</h3>
+                        <p data-i18n="benefit-4-desc">Регулиране на циркадните ритми чрез физическо натоварване.</p>
+                    </div>
+                </div>
+                <div class="benefit-references">
+                    <p>¹ Wolfe, R. R. (2006). The underappreciated role of muscle in health and disease.</p>
+                    <p>² Westcott, W. L. (2012). Resistance training is medicine: effects of strength training on
+                        health.
+                    </p>
+                    <p>³ Liu-Ambrose, T., et al. (2010). Resistance training and executive functions in senior women.
+                    </p>
+                    <p>⁴ Ferris, L. T., et al. (2005). Resistance training and sleep quality.</p>
+                </div>
+                <div class="benefits-cta">
+                    <a href="#booking-section" class="btn-primary" data-i18n="hero-cta">Запиши се сега</a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container flex-layout">
+            <div class="about-image">
+                <img src="me.webp"
+                    alt="Иван 'The Bear' - главен треньор в Bear Functional Банско, експерт по калистеника и примални движения">
+                <div class="about-badge">
+                    <span class="badge-title">Head Coach</span>
+                    <span class="badge-name">Ivan The Bear</span>
+                </div>
+            </div>
+            <div class="about-text">
+                <h2 data-i18n="about-title">За мен</h2>
+                <p data-i18n="about-p1">В Bear Functional вярваме в движението като начин на живот. Фокусираме се върху
+                    калистеника, примални движения и функционална сила, която ви служи всеки ден.</p>
+                <ul class="about-highlights">
+                    <li data-i18n="about-h1">Над 10 години опит в калистеника и функционални тренировки</li>
+                    <li data-i18n="about-h2">Сертифициран специалист по Kondition & Strength</li>
+                    <li data-i18n="about-h3">Трансформирал живота на над 500+ активни клиенти</li>
+                    <li data-i18n="about-h4">Експерт по Primal Movement & Animal Flow</li>
+                </ul>
+                <div class="bio-tagline" data-i18n="about-tagline">⛓️ Bodyweight, Movement & Primal Strength</div>
+                <a href="#booking-section" class="btn-primary" data-i18n="about-cta"
+                    style="display: inline-block; margin-top: 1rem;">Започни своята трансформация</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="events" class="events-section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="events-title">Събития</h2>
+            <div class="event-card">
+                <div class="event-main-img">
+                    <img src="viking1.jpg"
+                        alt="Viking Warrior Challenge - мащабно фитнес събитие на Bear Functional в Банско">
+                </div>
+                <div class="event-content">
+                    <h3 class="event-name">Viking Warrior Challenge</h3>
+                    <div class="event-description">
+                        <div class="desc-content">
+                            <h4 class="viking-subtitle" data-i18n="viking-intro">Viking Warrior Challenge: Повече от
+                                тренировка. Епично преживяване.</h4>
+                            <p class="viking-text" data-i18n="viking-desc">В Bear Functional не просто влизаме във форма
+                                – ние изграждаме истории...</p>
+
+                            <div class="desc-more hidden">
+                                <h5 data-i18n="viking-exp-title">Какво преживяха участниците?</h5>
+                                <ul class="viking-list">
+                                    <li data-i18n="viking-exp-1"><strong>Пълно потапяне:</strong> Разделени на
+                                        кланове...</li>
+                                    <li data-i18n="viking-exp-2"><strong>Геймификация и стратегия:</strong> Чрез
+                                        уникалната ми система...</li>
+                                    <li data-i18n="viking-exp-3"><strong>Изпитание на духа:</strong> От обръщане на гуми
+                                        до дърпане на шейни...</li>
+                                    <li data-i18n="viking-exp-4"><strong>Общност:</strong> Събитието завърши с банкет...
+                                    </li>
+                                </ul>
+
+                                <h5 data-i18n="viking-why-title">Защо ти разказвам това?</h5>
+                                <p data-i18n="viking-why-desc">Viking Warrior Challenge е само началото...</p>
+                            </div>
+                        </div>
+                        <button class="btn-expand" id="viking-read-more" data-i18n="btn-read-more">Read More</button>
+
+                        <div class="viking-cta">
+                            <p class="cta-text" data-i18n="viking-cta-title">Бъди сред първите, които ще научат за
+                                следващото ни епично събитие.</p>
+                            <form id="viking-email-form" class="email-form">
+                                <input type="text" id="viking-name" name="name" required
+                                    data-i18n-placeholder="viking-name-placeholder" placeholder="Твоето име">
+                                <input type="email" id="viking-email" name="email" required
+                                    data-i18n-placeholder="viking-email-placeholder" placeholder="Твоят имейл">
+                                <button type="submit" class="btn-primary" data-i18n="viking-btn-submit">ИНФОРМИРАЙ МЕ ЗА
+                                    СЛЕДВАЩОТО СЪБИТИЕ</button>
+                            </form>
+                            <div id="viking-success-msg" class="success-message hidden" data-i18n="viking-success">
+                                Благодаря! Ще те информираме първи.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="event-gallery">
+                <div class="gallery-grid">
+                    <div class="gallery-item"><img src="viking2.jpg"
+                            alt="Групови тренировки и калистеника в Банско - Viking Challenge" class="gallery-thumb"
+                            onclick="openLightbox(this.src)"></div>
+                    <div class="gallery-item"><img src="viking3.jpg"
+                            alt="Функционални тренировки в Bear Functional - атмосфера от събитието"
+                            class="gallery-thumb" onclick="openLightbox(this.src)"></div>
+                    <div class="gallery-item"><img src="viking4.jpg"
+                            alt="Клиенти на Bear Functional Банско по време на Viking Warrior Challenge"
+                            class="gallery-thumb" onclick="openLightbox(this.src)"></div>
+                    <div class="gallery-item"><img src="viking5.jpg"
+                            alt="Фитнес общност в Банско - Bear Functional събития" class="gallery-thumb"
+                            onclick="openLightbox(this.src)"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-wrapper">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#" class="footer-logo-link">
+                        <img src="logo.png" alt="Bear Functional за залата - фитнес Банско" class="footer-logo">
+                        <span class="footer-brand-name">Bear Functional</span>
+                    </a>
+                </div>
+                <div class="footer-socials">
+                    <ul class="social-icon-list">
+                        <li>
+                            <a href="https://www.facebook.com/profile.php?id=61583956317694" target="_blank"
+                                aria-label="Facebook">
+                                <span class="social-icon">FB</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/bear.functional/" target="_blank" aria-label="Instagram">
+                                <span class="social-icon">IG</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom-grid">
+                <div class="footer-info-column">
+                    <div class="footer-copyright">
+                        <p>&copy; 2026 Bear Functional Training.</p>
+                        <p data-i18n="footer-rights">Всички права запазени.</p>
+                    </div>
+                </div>
+
+                <div class="footer-location">
+                    <p class="location-text" data-i18n="footer-address">📍 ул. Пирин 1, Банско, България</p>
+                    <p class="location-text" data-i18n="footer-phone">📞 +359 XXX XXX XXX</p>
+                    <a href="https://maps.app.goo.gl/sGP98uDBwtte6upd9" target="_blank" rel="noopener noreferrer"
+                        class="btn-secondary btn-sm" data-i18n="footer-map-btn"
+                        style="margin-top: 1rem; display: inline-flex;">
+                        📍 Виж в Google Maps
+                    </a>
+                </div>
+
+                <div class="footer-nav-container">
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="#" data-i18n="nav-home">Начало</a></li>
+                            <li><a href="#schedule" data-i18n="nav-schedule">Тренировки</a></li>
+                            <li><a href="#about" data-i18n="nav-about">За мен</a></li>
+                            <li><a href="#booking-section" data-i18n="nav-contact">Контакт</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Workout Details Modal -->
+    <div id="workout-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="modal-info">
+                    <h2 id="modal-title"></h2>
+                    <p id="modal-desc"></p>
+                    <button id="modal-book-btn" class="btn-primary" data-i18n="hero-cta">Запиши се сега</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox-modal" class="modal lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
